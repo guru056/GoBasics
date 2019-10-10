@@ -1,0 +1,30 @@
+package main
+
+import "fmt"
+
+func PrintMapValue(m map[int]string, key int){
+	fmt.Println("The value is : ",m[key])
+}
+
+func main(){
+	m := make(map[int]string);
+
+	//Insert or update an element in map m:
+	//m[key] = elem	
+	m[1] = "One";
+	PrintMapValue(m,1);
+
+	m[1] = "one";
+	PrintMapValue(m,1);
+
+	delete(m,1);
+	PrintMapValue(m,1);
+
+	val,present := m[1];
+	fmt.Println("The value :",val,"Present?",present);
+
+	m[1] = "One";
+	val,present = m[1];
+    fmt.Println("The value :",val,"Present?",present);
+
+}
